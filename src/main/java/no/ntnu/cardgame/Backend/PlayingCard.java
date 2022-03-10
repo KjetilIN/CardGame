@@ -1,4 +1,4 @@
-package Backend;
+package no.ntnu.cardgame.Backend;
 
 /**
  * Represents a playing card. A playing card has a number (face) between

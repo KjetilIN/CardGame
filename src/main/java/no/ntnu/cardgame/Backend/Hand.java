@@ -1,4 +1,4 @@
-package Backend;
+package no.ntnu.cardgame.Backend;
 
 import java.util.ArrayList;
 import java.util.List;
