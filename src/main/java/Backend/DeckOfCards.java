@@ -15,6 +15,8 @@ public class DeckOfCards {
     private Random random;
 
 
+
+
     /**
      * The constructor for the deck of playing cards.
      */
@@ -27,19 +29,24 @@ public class DeckOfCards {
                 try{
                     cards.add(new PlayingCard(face,k));
                 }catch (NullPointerException e){
-                    System.err.println("Wrong");
+                    System.err.println("Card Missing!");
                 }
 
             }
         }
     }
 
-    public List<PlayingCard> dealHand(int n){
+    public ArrayList<PlayingCard> getCards() {
+        return cards;
+    }
+
+    public ArrayList<PlayingCard> dealHand(int n){
         ArrayList<PlayingCard> hand = new ArrayList<>();
-        while (n > 1){
+        while (n >= 1){
             PlayingCard card = cards.get(random.nextInt(cards.size())); // gets a card
             hand.add(card); //add the card to the hand
             cards.remove(card); //remove the hand from the collection of cards.
+            n--;
         }
         return hand;
 
