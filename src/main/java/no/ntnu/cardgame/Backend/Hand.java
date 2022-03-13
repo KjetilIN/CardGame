@@ -36,8 +36,22 @@ public class Hand {
         return this.hand.stream().reduce(0,(subtotal, card) -> subtotal+ card.getFace(), Integer::sum);
     }
 
+
+    /**
+     * Method that check if the hand has hearts.
+     *
+     * @return returns an arraylist with cards that has hearts.
+     */
     public ArrayList<PlayingCard> getHearts(){
         return (ArrayList<PlayingCard>) this.hand.stream().filter(card -> card.getSuit() == 'H').collect(Collectors.toList());
+    }
+
+    public PlayingCard findCard(char suit, int face){
+        PlayingCard result = null;
+        try{
+            result = (PlayingCard) this.hand.stream().filter(card -> card.getSuit() == suit && card.getFace()==face);
+        }catch (Exception ignore){}
+        return result;
     }
 
 }

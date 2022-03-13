@@ -1,4 +1,4 @@
-package Backend;
+package no.ntnu.cardgame.Backend;
 
 import no.ntnu.cardgame.Backend.DeckOfCards;
 import no.ntnu.cardgame.Backend.PlayingCard;

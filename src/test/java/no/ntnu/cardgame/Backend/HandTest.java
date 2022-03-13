@@ -1,4 +1,4 @@
-package Backend;
+package no.ntnu.cardgame.Backend;
 
 import no.ntnu.cardgame.Backend.DeckOfCards;
 import no.ntnu.cardgame.Backend.Hand;
@@ -69,6 +69,19 @@ class HandTest {
         cards2.add(new PlayingCard('C',2));
         Hand hand3 = new Hand(cards2);
         assertEquals(0,hand3.getHearts().size());
+    }
+
+    @Test
+    @DisplayName("Test the method to find a card")
+    void testFindCard(){
+        Hand hand = new Hand(deck.dealHand(3));
+        PlayingCard cardNotInHand = deck.getCards().get(0);
+
+        assertNull(hand.findCard(cardNotInHand.getSuit(), cardNotInHand.getFace()));
+        System.out.println(hand.findCard(cardNotInHand.getSuit(), cardNotInHand.getFace()));
+
+        PlayingCard cardInDeck = hand.getHand().get(0);
+        assertEquals(cardInDeck,hand.findCard(cardInDeck.getSuit(),cardInDeck.getFace()));
     }
 
 }
