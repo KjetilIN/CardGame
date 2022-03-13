@@ -17,13 +17,13 @@ class DeckOfCardsTest {
     DeckOfCards cards;
 
     @BeforeEach
-    void setup(){
+    public void setup(){
         cards = new DeckOfCards();
     }
 
     @Test
     @DisplayName("Test card deck constructor")
-    void testConstructor(){
+    public void testConstructor(){
         assertNotEquals(cards.getCards().get(0),cards.getCards().get(1));
         assertEquals(52,cards.getCards().size());
 
@@ -42,7 +42,7 @@ class DeckOfCardsTest {
 
     @Test
     @DisplayName("Test that dealHand() method removes cards from deck")
-    void dealHand() {
+    public void dealHand() {
         ArrayList<PlayingCard> hand = cards.dealHand(4); //Takes four cards away
         assertEquals(52-4,cards.getCards().size());
 
