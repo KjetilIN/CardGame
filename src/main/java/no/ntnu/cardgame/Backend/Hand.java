@@ -2,6 +2,7 @@ package no.ntnu.cardgame.Backend;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Class for a single hand.
@@ -33,6 +34,10 @@ public class Hand {
 
     public int getCardSum(){
         return this.hand.stream().reduce(0,(subtotal, card) -> subtotal+ card.getFace(), Integer::sum);
+    }
+
+    public ArrayList<PlayingCard> getHearts(){
+        return (ArrayList<PlayingCard>) this.hand.stream().filter(card -> card.getSuit() == 'H').collect(Collectors.toList());
     }
 
 }

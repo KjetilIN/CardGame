@@ -12,19 +12,19 @@ class PlayingCardTest {
     PlayingCard card;
 
     @BeforeEach
-    public void setup(){
+    void setup(){
         card = new PlayingCard('H',3);
     }
 
     @Test
     @DisplayName("[TEST]: Get suit")
-    public void getSuit() {
+    void getSuit() {
         assertEquals('H',card.getSuit());
     }
 
     @Test
     @DisplayName("[TEST]: Get face")
-    public void getFace() {
+    void getFace() {
         assertEquals(3,card.getFace());
     }
 }
