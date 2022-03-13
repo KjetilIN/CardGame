@@ -46,6 +46,14 @@ public class Hand {
         return (ArrayList<PlayingCard>) this.hand.stream().filter(card -> card.getSuit() == 'H').collect(Collectors.toList());
     }
 
+    /**
+     * Method to find a card in the deck.
+     *
+     * @param suit the suit of the card that is looked for.
+     * @param face face of the card that are looked for.
+     * @return returns the card found, or null if the card is not found.
+     */
+
     public PlayingCard findCard(char suit, int face){
         PlayingCard result;
         try{
@@ -54,6 +62,18 @@ public class Hand {
             result = null;
         }
         return result;
+    }
+
+    /**
+     * Check if current hand has flush.
+     * (If all the suit for each of the cards are equal)
+     *
+     * @return true if you have a flush, else return false
+     */
+    public boolean hasFlush(){
+        char suit = this.hand.get(0).getSuit();
+        int sameSuit = (int) this.hand.stream().filter(card -> card.getSuit() == suit).count();
+        return sameSuit == hand.size();
     }
 
 }
