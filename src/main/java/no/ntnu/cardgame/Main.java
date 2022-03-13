@@ -13,9 +13,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("temp.fxml"));
-        Scene scene = new Scene(loader.load(),400,400);
-        stage.setTitle("Test");
+        Scene scene = new Scene(loader.load());
+        stage.setTitle("Card Application");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 }
