@@ -39,6 +39,14 @@ public class DeckOfCards {
         return cards;
     }
 
+    /**
+     * Returns a list of cards from the deck.
+     * Removes the cards given in the deck.
+     *
+     * @param n the amount of cards to return
+     * @return return an arraylist of cards
+     */
+
     public ArrayList<PlayingCard> dealHand(int n){
         ArrayList<PlayingCard> hand = new ArrayList<>();
         while (n >= 1){

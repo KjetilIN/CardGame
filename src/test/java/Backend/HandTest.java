@@ -22,4 +22,11 @@ class HandTest {
         assertEquals(5,hand.getHand().size());
     }
 
+    @Test
+    @DisplayName("Test if sum of cards works")
+    void testGetSum(){
+        Hand hand = new Hand(deck.dealHand(3));
+        assertEquals(50,hand.getCardSum());
+    }
+
 }
