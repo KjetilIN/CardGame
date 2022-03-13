@@ -17,13 +17,13 @@ class PlayingCardTest {
     }
 
     @Test
-    @DisplayName("[TEST]: Get suit")
+    @DisplayName("Test get suit")
     void getSuit() {
         assertEquals('H',card.getSuit());
     }
 
     @Test
-    @DisplayName("[TEST]: Get face")
+    @DisplayName("Test get face")
     void getFace() {
         assertEquals(3,card.getFace());
     }

@@ -83,4 +83,27 @@ class HandTest {
         assertEquals(cardInDeck,hand.findCard(cardInDeck.getSuit(),cardInDeck.getFace()));
     }
 
+    @Test
+    @DisplayName("Test if the player has flush method works")
+    void testHasFlush(){
+        ArrayList<PlayingCard> cards = new ArrayList<>();
+        cards.add(new PlayingCard('H',5));
+        cards.add(new PlayingCard('H',4));
+        cards.add(new PlayingCard('H',3));
+        cards.add(new PlayingCard('H',2));
+        Hand hand = new Hand(cards);
+        assertTrue(hand.hasFlush());
+
+        ArrayList<PlayingCard> cards2 = new ArrayList<>();
+        cards2.add(new PlayingCard('H',5));
+        cards2.add(new PlayingCard('S',4));
+        cards2.add(new PlayingCard('H',3));
+        cards2.add(new PlayingCard('D',2));
+        Hand handWithNoFLush = new Hand(cards2);
+        assertFalse(handWithNoFLush.hasFlush());
+
+
+
+    }
+
 }
