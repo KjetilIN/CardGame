@@ -47,10 +47,12 @@ public class Hand {
     }
 
     public PlayingCard findCard(char suit, int face){
-        PlayingCard result = null;
+        PlayingCard result;
         try{
-            result = (PlayingCard) this.hand.stream().filter(card -> card.getSuit() == suit && card.getFace()==face);
-        }catch (Exception ignore){}
+            result = this.hand.stream().filter(card -> card.getSuit() == suit && card.getFace()==face).collect(Collectors.toList()).get(0);
+        }catch (Exception e){
+            result = null;
+        }
         return result;
     }
 

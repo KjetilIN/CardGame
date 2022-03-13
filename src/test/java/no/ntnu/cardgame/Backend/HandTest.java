@@ -78,7 +78,6 @@ class HandTest {
         PlayingCard cardNotInHand = deck.getCards().get(0);
 
         assertNull(hand.findCard(cardNotInHand.getSuit(), cardNotInHand.getFace()));
-        System.out.println(hand.findCard(cardNotInHand.getSuit(), cardNotInHand.getFace()));
 
         PlayingCard cardInDeck = hand.getHand().get(0);
         assertEquals(cardInDeck,hand.findCard(cardInDeck.getSuit(),cardInDeck.getFace()));
