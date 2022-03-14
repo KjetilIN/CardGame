@@ -96,7 +96,7 @@ public class PlayingCard {
                 break;
 
             case 'H':
-                result += "hearths.png";
+                result += "hearts.png";
                 break;
 
             case 'C':
