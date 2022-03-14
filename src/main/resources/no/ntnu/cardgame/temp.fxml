@@ -42,20 +42,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="727.0" maxWidth="1055.0" minHeight="727.0" minWidth="1055.0" prefHeight="727.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.ntnu.cardgame.Controller">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1055.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="Deck">
             <items>
-              <MenuItem mnemonicParsing="false" text="New deck..." />
+              <MenuItem mnemonicParsing="false" onAction="#onNewDeck" text="New deck..." />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Exit" />
+          <Menu mnemonicParsing="false" text="Exit">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onExit" text="Exit application..." />
+               </items></Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="806.0" layoutY="451.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Deal Hand" AnchorPane.bottomAnchor="251.0" AnchorPane.rightAnchor="148.0" />
+      <Button fx:id="buttonDealHand" layoutX="806.0" layoutY="451.0" mnemonicParsing="false" onAction="#onDealHand" prefHeight="25.0" prefWidth="101.0" text="Deal Hand" AnchorPane.bottomAnchor="251.0" AnchorPane.rightAnchor="148.0" />
       <ImageView fitHeight="150.0" fitWidth="309.0" layoutX="388.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="546.0" AnchorPane.leftAnchor="388.0" AnchorPane.rightAnchor="441.8592834472656" AnchorPane.topAnchor="31.0">
          <image>
             <Image url="@img/fixedImg/card-set.jpg" />
@@ -90,7 +92,7 @@
       <Text layoutX="53.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current hand:" wrappingWidth="80.0" />
       <Text layoutX="53.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Has flush:" wrappingWidth="80.0" />
       <Text layoutX="37.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount of hearts: " wrappingWidth="137.5078125" />
-      <TextField layoutX="133.0" layoutY="459.0" />
+      <TextField fx:id="txtHand" layoutX="133.0" layoutY="459.0" />
       <TextField layoutX="141.0" layoutY="505.0" />
       <TextField layoutX="126.0" layoutY="555.0" />
    </children>

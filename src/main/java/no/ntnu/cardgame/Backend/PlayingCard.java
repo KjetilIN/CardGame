@@ -52,4 +52,56 @@ public class PlayingCard {
     public int getFace() {
         return face;
     }
+
+
+    /**
+     * Method that gets the png url for the card.
+     * @return return the sting url for the card.
+     */
+
+    public String getUrlSting(){
+        String result = "";
+        if(this.face <= 10 && this.face > 1){
+            result += String.valueOf(this.face);
+        }else{
+            switch (this.face){
+                case 11:
+                    result += "jack";
+                    break;
+
+                case 12:
+                    result += "queen";
+                    break;
+
+                case 13:
+                    result += "king";
+                    break;
+
+                case 1:
+                    result += "ace";
+                    break;
+
+            }
+
+        }
+        result +="_of_";
+
+        switch (this.suit){
+            case 'S':
+                result+="spades.png";
+                break;
+
+            case 'D':
+                result +="diamonds.png";
+                break;
+
+            case 'H':
+                result += "hearths.png";
+                break;
+
+            case 'C':
+                result += "clubs.png";
+        }
+        return result;
+    }
 }
