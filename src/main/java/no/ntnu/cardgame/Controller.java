@@ -51,7 +51,7 @@ public class Controller implements Initializable {
 
     /* Methods */
     @FXML
-    private void onDealHand(ActionEvent actionEvent)  {
+    private void onDealHand()  {
         int sleeptime = 2000;
         hand = new Hand(deck.dealHand(5));
         String result = "";
