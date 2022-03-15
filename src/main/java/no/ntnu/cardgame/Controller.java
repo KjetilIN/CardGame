@@ -29,6 +29,9 @@ public class Controller implements Initializable {
     private Button buttonDealHand;
 
     @FXML
+    private Button buttonCheckHand;
+
+    @FXML
     private ImageView cardone;
 
     @FXML
@@ -46,13 +49,15 @@ public class Controller implements Initializable {
     /* Constructor for the controller*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         deck = new DeckOfCards();
+        buttonCheckHand.setDisable(true);
     }
 
     /* Methods */
     @FXML
     private void onDealHand()  {
-        int sleeptime = 2000;
+
         hand = new Hand(deck.dealHand(5));
         String result = "";
         for (PlayingCard card :hand.getHand()){
@@ -62,6 +67,7 @@ public class Controller implements Initializable {
 
         txtHand.setText(result);
         buttonDealHand.setDisable(true);
+        buttonCheckHand.setDisable(false);
 
         /* Show hands*/
         String cardUrl1 = CARD_TYPE_ROOT_URL + hand.getHand().get(0).getUrlSting();
@@ -97,6 +103,15 @@ public class Controller implements Initializable {
         deck = new DeckOfCards();
         buttonDealHand.setDisable(false);
         txtHand.setText(" ");
+        Image backCard = new Image("no/ntnu/cardgame/img/fixedImg/backside.png");
+        cardone.setImage(backCard);
+        cardtwo.setImage(backCard);
+        cardthree.setImage(backCard);
+        cardfour.setImage(backCard);
+        cardfive.setImage(backCard);
+        buttonCheckHand.setDisable(true);
+
+
     }
 
 

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  */
 
 public class Hand {
-    private ArrayList<PlayingCard> hand;
+    private final ArrayList<PlayingCard> hand;
 
     /**
      * Constructor for the card class.
@@ -22,7 +22,7 @@ public class Hand {
 
     }
 
-    public ArrayList<PlayingCard> getHand() {
+    public List<PlayingCard> getHand() {
         return hand;
     }
 
@@ -42,8 +42,8 @@ public class Hand {
      *
      * @return returns an arraylist with cards that has hearts.
      */
-    public ArrayList<PlayingCard> getHearts(){
-        return (ArrayList<PlayingCard>) this.hand.stream().filter(card -> card.getSuit() == 'H').collect(Collectors.toList());
+    public List<PlayingCard> getHearts(){
+        return this.hand.stream().filter(card -> card.getSuit() == 'H').collect(Collectors.toList());
     }
 
     /**
@@ -55,13 +55,7 @@ public class Hand {
      */
 
     public PlayingCard findCard(char suit, int face){
-        PlayingCard result;
-        try{
-            result = this.hand.stream().filter(card -> card.getSuit() == suit && card.getFace()==face).collect(Collectors.toList()).get(0);
-        }catch (Exception e){
-            result = null;
-        }
-        return result;
+        return this.hand.stream().filter(card -> card.getSuit()==suit && card.getFace()==face).findAny().orElse(null);
     }
 
     /**
@@ -72,8 +66,7 @@ public class Hand {
      */
     public boolean hasFlush(){
         char suit = this.hand.get(0).getSuit();
-        int sameSuit = (int) this.hand.stream().filter(card -> card.getSuit() == suit).count();
-        return sameSuit == hand.size();
+        return this.hand.stream().allMatch(s ->s.getSuit() ==suit);
     }
 
 }

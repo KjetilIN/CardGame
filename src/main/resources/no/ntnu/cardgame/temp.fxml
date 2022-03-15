@@ -88,7 +88,7 @@
             <Image url="@img/fixedImg/backside.png" />
          </image>
       </ImageView>
-      <Button layoutX="810.0" layoutY="505.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Check Hand" />
+      <Button fx:id="buttonCheckHand" layoutX="810.0" layoutY="505.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Check Hand" />
       <Text layoutX="53.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current hand:" wrappingWidth="80.0" />
       <Text layoutX="53.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Has flush:" wrappingWidth="80.0" />
       <Text layoutX="37.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount of hearts: " wrappingWidth="137.5078125" />
