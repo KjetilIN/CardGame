@@ -4,14 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import no.ntnu.cardgame.Backend.*;
 
 import java.net.URL;
-import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -24,6 +23,12 @@ public class Controller implements Initializable {
     /* FXML fields */
     @FXML
     private TextField txtHand;
+
+    @FXML
+    private TextField txtFlush;
+
+    @FXML
+    private TextField txtHearts;
 
     @FXML
     private Button buttonDealHand;
@@ -59,13 +64,13 @@ public class Controller implements Initializable {
     private void onDealHand()  {
 
         hand = new Hand(deck.dealHand(5));
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (PlayingCard card :hand.getHand()){
-            result += card.getAsString() + ", ";
+            result.append(card.getAsString()).append(" ");
 
         }
 
-        txtHand.setText(result);
+        txtHand.setText(result.toString());
         buttonDealHand.setDisable(true);
         buttonCheckHand.setDisable(false);
 
@@ -103,6 +108,8 @@ public class Controller implements Initializable {
         deck = new DeckOfCards();
         buttonDealHand.setDisable(false);
         txtHand.setText(" ");
+        txtHearts.setText(" ");
+        txtFlush.setText(" ");
         Image backCard = new Image("no/ntnu/cardgame/img/fixedImg/backside.png");
         cardone.setImage(backCard);
         cardtwo.setImage(backCard);
@@ -111,6 +118,28 @@ public class Controller implements Initializable {
         cardfive.setImage(backCard);
         buttonCheckHand.setDisable(true);
 
+
+    }
+
+    @FXML
+    private void onCheckHand(){
+        if(hand.hasFlush()){
+            txtFlush.setText("YES!");
+        }else{
+            txtFlush.setText("No flush here....");
+        }
+
+        ArrayList<PlayingCard> hearts = (ArrayList<PlayingCard>) hand.getHearts();
+        if(hearts.isEmpty()){
+            txtHearts.setText("No hearts in deck");
+        }else{
+            StringBuilder result = new StringBuilder();
+            for(PlayingCard card : hearts){
+                result.append(card.getAsString()).append(" ");
+            }
+            txtHearts.setText(result.toString());
+        }
+        buttonCheckHand.setDisable(true);
 
     }
 
