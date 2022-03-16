@@ -55,7 +55,9 @@ public class Hand {
      */
 
     public PlayingCard findCard(char suit, int face){
-        return this.hand.stream().filter(card -> card.getSuit()==suit && card.getFace()==face).findAny().orElse(null);
+        return this.hand.stream().filter(card -> card.getSuit()==suit && card.getFace()==face)
+                .findAny()
+                .orElse(null);
     }
 
     /**

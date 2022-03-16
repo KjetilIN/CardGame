@@ -3,10 +3,14 @@ package no.ntnu.cardgame;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import no.ntnu.cardgame.Backend.*;
 
 import java.net.URL;
@@ -21,6 +25,7 @@ public class Controller implements Initializable {
     private static final String CARD_TYPE_ROOT_URL = "no\\ntnu\\cardgame\\img\\cards\\";
 
     /* FXML fields */
+
     @FXML
     private TextField txtHand;
 
@@ -51,12 +56,17 @@ public class Controller implements Initializable {
     @FXML
     private  ImageView cardfive;
 
+    /* Stats Tab*/
+    @FXML
+    private Tab statsTab;
+
     /* Constructor for the controller*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         deck = new DeckOfCards();
         buttonCheckHand.setDisable(true);
+        statsTab.setDisable(true);
     }
 
     /* Methods */
@@ -117,6 +127,7 @@ public class Controller implements Initializable {
         cardfour.setImage(backCard);
         cardfive.setImage(backCard);
         buttonCheckHand.setDisable(true);
+        statsTab.setDisable(true);
 
 
     }
@@ -140,6 +151,7 @@ public class Controller implements Initializable {
             txtHearts.setText(result.toString());
         }
         buttonCheckHand.setDisable(true);
+        statsTab.setDisable(false);
 
     }
 
