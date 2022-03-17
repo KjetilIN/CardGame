@@ -1,4 +1,4 @@
-package no.ntnu.cardgame;
+package no.ntnu.cardgame.FrontEnd.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

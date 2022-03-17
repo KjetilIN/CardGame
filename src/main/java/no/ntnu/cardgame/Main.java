@@ -17,9 +17,8 @@ public class Main extends Application {
         Scene scene = new Scene(loader.load());
         stage.setTitle("Card Application");
         stage.setScene(scene);
+        //stage.setResizable(false);
         stage.initStyle(StageStyle.UTILITY);
-        stage.setMinWidth(1200);
-        stage.setMinHeight(800);
         stage.show();
     }
 }

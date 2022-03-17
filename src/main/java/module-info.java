@@ -4,4 +4,6 @@ module no.ntnu.cardgame {
 
     opens no.ntnu.cardgame to javafx.fxml;
     exports no.ntnu.cardgame;
+    exports no.ntnu.cardgame.FrontEnd.controllers;
+    opens no.ntnu.cardgame.FrontEnd.controllers to javafx.fxml;
 }
