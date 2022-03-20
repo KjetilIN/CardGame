@@ -66,7 +66,6 @@ public class Controller implements Initializable {
 
         deck = new DeckOfCards();
         buttonCheckHand.setDisable(true);
-        statsTab.setDisable(true);
     }
 
     /* Methods */
@@ -127,7 +126,6 @@ public class Controller implements Initializable {
         cardfour.setImage(backCard);
         cardfive.setImage(backCard);
         buttonCheckHand.setDisable(true);
-        statsTab.setDisable(true);
 
 
     }
@@ -151,7 +149,6 @@ public class Controller implements Initializable {
             txtHearts.setText(result.toString());
         }
         buttonCheckHand.setDisable(true);
-        statsTab.setDisable(false);
 
     }
 
