@@ -1,5 +1,4 @@
 # CardGame
 
 This is a simple cardGame using JavaFx. 
-
-![Animation](https://user-images.githubusercontent.com/66110094/158895576-f48efa08-e5b5-49e3-97aa-87811c24ba8f.gif)
+ ![Animation](https://user-images.githubusercontent.com/66110094/159165738-3e08495f-7dd7-4783-b062-fb20ab58101a.gif)
