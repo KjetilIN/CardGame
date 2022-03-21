@@ -25,12 +25,7 @@ public class DeckOfCards {
         for(int i = 0; i<=3;i++){
             char face = suit[i];
             for(int k = 1; k<=13; k++){
-                try{
-                    cards.add(new PlayingCard(face,k));
-                }catch (NullPointerException e){
-                    System.err.println("Card Missing!");
-                }
-
+                cards.add(new PlayingCard(face,k));
             }
         }
     }
@@ -46,7 +41,6 @@ public class DeckOfCards {
      * @param n the amount of cards to return
      * @return return an arraylist of cards
      */
-
     public ArrayList<PlayingCard> dealHand(int n){
         ArrayList<PlayingCard> hand = new ArrayList<>();
         while (n >= 1){

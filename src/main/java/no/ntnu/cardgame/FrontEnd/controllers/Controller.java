@@ -159,7 +159,7 @@ public class Controller implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText("Version: v.0.0.1");
         alert.initStyle(StageStyle.UNDECORATED);
-        Optional<ButtonType> result = alert.showAndWait();
+        alert.showAndWait();
     }
 
 
