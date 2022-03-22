@@ -108,6 +108,12 @@ public class Controller implements Initializable {
 
     }
 
+    /**
+     * Method to handle exit from menu-bar option.
+     * 
+     * @param actionEvent event for the instance.
+     */
+
     @FXML
     private void onExit(ActionEvent actionEvent){
         System.exit(0);
