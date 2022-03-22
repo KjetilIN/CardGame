@@ -30,6 +30,10 @@ public class DeckOfCards {
         }
     }
 
+    /**
+     * Method that get the list of cards in the deck.
+     * @return returns list of cards
+     */
     public ArrayList<PlayingCard> getCards() {
         return cards;
     }
